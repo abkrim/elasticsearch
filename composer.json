@@ -1,5 +1,5 @@
 {
-    "name": "basemkhirat/elasticsearch",
+    "name": "abkrim/elasticsearch",
     "description": "Laravel, Lumen and Native php elasticseach query builder to build complex queries using an elegant syntax",
     "keywords": [
         "elasticsearch",
@@ -13,20 +13,20 @@
     ],
     "license": "MIT",
     "type": "package",
-    "homepage": "http://basemkhirat.com",
+    "homepage": "http://abkrim.com",
     "support": {
-        "issues": "https://github.com/basemkhirat/elasticsearch/issues",
-        "source": "http://basemkhirat.com/indexing/2016/01/07/laravel-elasticseach-query-builder.html"
+        "issues": "https://github.com/abkrim/elasticsearch/issues",
+        "source": "http://abkrim.com/indexing/2016/01/07/laravel-elasticseach-query-builder.html"
     },
     "authors": [
         {
-            "name": "basemkhirat",
-            "email": "basemkhirat@gmail.com"
+            "name": "abkrim",
+            "email": "abkrim@gmail.com"
         }
     ],
     "autoload": {
         "psr-4": {
-            "Basemkhirat\\Elasticsearch\\": "src/"
+            "Abkrim\\Elasticsearch\\": "src/"
         },
         "files": [
             "src/helpers.php"
@@ -34,7 +34,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Basemkhirat\\Elasticsearch\\Tests\\": "tests/"
+            "Abkrim\\Elasticsearch\\Tests\\": "tests/"
         }
     },
     "require": {
@@ -50,10 +50,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Basemkhirat\\Elasticsearch\\ElasticsearchServiceProvider"
+                "Abkrim\\Elasticsearch\\ElasticsearchServiceProvider"
             ],
             "aliases": {
-                "ES": "Basemkhirat\\Elasticsearch\\Facades\\ES"
+                "ES": "Abkrim\\Elasticsearch\\Facades\\ES"
             }
         }
     }

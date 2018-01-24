@@ -1,6 +1,6 @@
 <?php
 
-namespace Basemkhirat\Elasticsearch;
+namespace Abkrim\Elasticsearch;
 
 use Illuminate\Support\Collection as BaseCollection;
 

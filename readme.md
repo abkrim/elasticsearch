@@ -1,11 +1,11 @@
 <p align="center">
-<a href="https://travis-ci.org/basemkhirat/elasticsearch"><img src="https://travis-ci.org/basemkhirat/elasticsearch.svg?branch=master" alt="Build Status"></a>
-<a href="https://packagist.org/packages/basemkhirat/elasticsearch"><img src="https://poser.pugx.org/basemkhirat/elasticsearch/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/basemkhirat/elasticsearch"><img src="https://poser.pugx.org/basemkhirat/elasticsearch/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/basemkhirat/elasticsearch"><img src="https://poser.pugx.org/basemkhirat/elasticsearch/license.svg" alt="License"></a>
+<a href="https://travis-ci.org/abkrim/elasticsearch"><img src="https://travis-ci.org/abkrim/elasticsearch.svg?branch=master" alt="Build Status"></a>
+<a href="https://packagist.org/packages/abkrim/elasticsearch"><img src="https://poser.pugx.org/abkrim/elasticsearch/v/stable.svg" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/abkrim/elasticsearch"><img src="https://poser.pugx.org/abkrim/elasticsearch/d/total.svg" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/abkrim/elasticsearch"><img src="https://poser.pugx.org/abkrim/elasticsearch/license.svg" alt="License"></a>
 </p>
 
-<p align="center"><img src="http://basemkhirat.com/images/basemkhirat-elasticsearch.png?123"></p>
+<p align="center"><img src="http://abkrim.com/images/abkrim-elasticsearch.png?123"></p>
 
 
 ## Laravel, Lumen and Native php elasticseach query builder to build complex queries using an elegant syntax
@@ -22,16 +22,16 @@
 
 ## Requirements
 
-- `php` >= 5.6.6 
-  
-  See [Travis CI Builds](https://travis-ci.org/basemkhirat/elasticsearch).
+- `php` >= 5.6.6
+
+  See [Travis CI Builds](https://travis-ci.org/abkrim/elasticsearch).
 
 - `laravel/laravel` >= 5.* or `laravel/lumen` >= 5.* or `composer application`
 
 
 ## Documentation
 
-See [Full Documentation](https://github.com/basemkhirat/elasticsearch/wiki/1.-Installation).
+See [Full Documentation](https://github.com/abkrim/elasticsearch/wiki/1.-Installation).
 
 ## Installation
 
@@ -41,43 +41,43 @@ See [Full Documentation](https://github.com/basemkhirat/elasticsearch/wiki/1.-In
 ##### 1) Install package using composer.
 
 ```bash
-$ composer require basemkhirat/elasticsearch
+$ composer require abkrim/elasticsearch
 ```
 
 ##### 2) Add package service provider (< laravel 5.5).
 
 ```php
-Basemkhirat\Elasticsearch\ElasticsearchServiceProvider::class
+Abkrim\Elasticsearch\ElasticsearchServiceProvider::class
 ```
 
 ##### 3) Add package alias (< laravel 5.5).
 
 ```php
-'ES' => Basemkhirat\Elasticsearch\Facades\ES::class
+'ES' => Abkrim\Elasticsearch\Facades\ES::class
 ```
-	
+
 ##### 4) Publishing.
 
 ```bash
-$ php artisan vendor:publish --provider="Basemkhirat\Elasticsearch\ElasticsearchServiceProvider"
+$ php artisan vendor:publish --provider="Abkrim\Elasticsearch\ElasticsearchServiceProvider"
 ```
 
 ### <u>Lumen Installation</u>
 
 ##### 1) Install package using composer.
 ```bash
-$ composer require basemkhirat/elasticsearch
+$ composer require abkrim/elasticsearch
 ```
 
 ##### 2) Add package service provider in `bootstrap/app.php`.
 
 ```php
-$app->register(Basemkhirat\Elasticsearch\ElasticsearchServiceProvider::class);
+$app->register(Abkrim\Elasticsearch\ElasticsearchServiceProvider::class);
 ```
-	
-##### 3) Copy package config directory `vendor/basemkhirat/elasticsearch/src/config` to root folder alongside with `app` directory.
-	
-	
+
+##### 3) Copy package config directory `vendor/abkrim/elasticsearch/src/config` to root folder alongside with `app` directory.
+
+
 ##### 4) Making Lumen work with facades by uncommenting this line in `bootstrap/app.php`.
 
 ```php
@@ -89,11 +89,11 @@ If you don't want to enable working with Lumen facades you can access the query 
 ```php
 app("es")->index("my_index")->type("my_type")->get();
 
-# is similar to 
+# is similar to
 
 ES::index("my_index")->type("my_type")->get();
-```   
-   
+```
+
 ### <u>Composer Installation</u>
 
 You can install package with any composer-based applications
@@ -101,7 +101,7 @@ You can install package with any composer-based applications
 ##### 1) Install package using composer.
 
 ```bash
-$ composer require basemkhirat/elasticsearch
+$ composer require abkrim/elasticsearch
 ```
 
 ##### 2) Creating a connection.
@@ -109,7 +109,7 @@ $ composer require basemkhirat/elasticsearch
 ```php
 require "vendor/autoload.php";
 
-use Basemkhirat\Elasticsearch\Connection;
+use Abkrim\Elasticsearch\Connection;
 
 $connection = Connection::create([
     'servers' => [
@@ -121,7 +121,7 @@ $connection = Connection::create([
             'scheme' => 'http',
         ],
     ],
-    
+
 	// Custom handlers
 	// 'handler' => new MyCustomHandler(),
 
@@ -137,9 +137,9 @@ $documents = $connection->search("hello")->get();
 
 ## Configuration (Laravel & Lumen)
 
-  
+
 After publishing, two configuration files will be created.
-  
+
   - `config/es.php` where you can add more than one elasticsearch server.
 
 ```php
@@ -160,16 +160,16 @@ After publishing, two configuration files will be created.
 	            'scheme' => env('ELASTIC_SCHEME', 'http'),
 	        ]
 	    ],
-	    
+
 		// Custom handlers
 		// 'handler' => new MyCustomHandler(),
-		
+
 		'index' => env('ELASTIC_INDEX', 'my_index')
 	]
 ],
- 
+
 # Here you can define your indices.
- 
+
 'indices' => [
 	'my_index_1' => [
 	    "aliases" => [
@@ -192,7 +192,7 @@ After publishing, two configuration files will be created.
 ]
 
 ```
-  
+
   - `config/scout.php` where you can use package as a laravel scout driver.
 
 ## Working with console environment (Laravel & Lumen)
@@ -227,7 +227,7 @@ $ php artisan es:indices:create
 
 # Create only 'my_index' index in config file
 
-$ php artisan es:indices:create my_index 
+$ php artisan es:indices:create my_index
 
 ```
 
@@ -242,7 +242,7 @@ $ php artisan es:indices:update
 
 # Update only 'my_index' index in config file
 
-$ php artisan es:indices:update my_index 
+$ php artisan es:indices:update my_index
 
 ```
 
@@ -259,7 +259,7 @@ $ php artisan es:indices:drop
 
 # Drop specific index on sever. Not matter for index to be exist in config file or not.
 
-$ php artisan es:indices:drop my_index 
+$ php artisan es:indices:drop my_index
 
 ```
 
@@ -281,7 +281,7 @@ The index `alias` is a constant name that application should work with to avoid 
 ```php
 "aliases" => [
     "my_index_alias"
-]       
+]
 ```
 
 2) Update index with command:
@@ -311,7 +311,7 @@ $ php artisan es:indices:reindex my_index my_new_index --bulk-size=2000 --scroll
 
 # Skip reindexing errors such as mapper parsing exceptions.
 
-$ php artisan es:indices:reindex my_index my_new_index --bulk-size=2000 --skip-errors 
+$ php artisan es:indices:reindex my_index my_new_index --bulk-size=2000 --skip-errors
 
 # Hide all reindexing errors and show the progres bar only.
 
@@ -333,11 +333,11 @@ All you have to do is updating these lines in `config/scout.php` configuration f
 
 ```php
 # change the default driver to 'es'
-	
+
 'driver' => env('SCOUT_DRIVER', 'es'),
-	
+
 # link `es` driver with default elasticsearch connection in config/es.php
-	
+
 'es' => [
     'connection' => env('ELASTIC_CONNECTION', 'default'),
 ],
@@ -359,13 +359,13 @@ Models allow you to query for data in your types or indices, as well as insert n
 
 namespace App;
 
-use Basemkhirat\Elasticsearch\Model;
+use Abkrim\Elasticsearch\Model;
 
 class Post extends Model
 {
-        
+
     protected $type = "posts";
-    
+
 }
 ```
 
@@ -376,22 +376,22 @@ The above example will use the default connection and default index in `es.php`.
 
 namespace App;
 
-use Basemkhirat\Elasticsearch\Model;
+use Abkrim\Elasticsearch\Model;
 
 class Post extends Model
 {
-    
+
     # [optional] Default: default elasticsearch driver
     # To override default conenction name of es.php file.
     # Assumed that there is a connection with name 'my_connection'
     protected $connection = "my_connection";
-    
+
     # [optional] Default: default connection index
     # To override default index name of es.php file.
     protected $index = "my_index";
-    
+
     protected $type = "posts";
-    
+
 }
 ```
 
@@ -502,15 +502,15 @@ Scopes should always return a Query instance.
 
 namespace App;
 
-use Basemkhirat\Elasticsearch\Model;
+use Abkrim\Elasticsearch\Model;
 
 class Post extends Model
 {
     /**
      * Scope a query to only include popular posts.
      *
-     * @param \Basemkhirat\Elasticsearch\Query $query
-     * @return \Basemkhirat\Elasticsearch\Query
+     * @param \Abkrim\Elasticsearch\Query $query
+     * @return \Abkrim\Elasticsearch\Query
      */
     public function scopePopular($query, $votes)
     {
@@ -520,8 +520,8 @@ class Post extends Model
     /**
      * Scope a query to only include active posts.
      *
-     * @param \Basemkhirat\Elasticsearch\Query $query
-     * @return \Basemkhirat\Elasticsearch\Query
+     * @param \Abkrim\Elasticsearch\Query $query
+     * @return \Abkrim\Elasticsearch\Query
      */
     public function scopeActive($query)
     {
@@ -548,7 +548,7 @@ To define an `accessor`, create a getFooAttribute method on your model where `Fo
 
 namespace App;
 
-use Basemkhirat\Elasticsearch\Model;
+use Abkrim\Elasticsearch\Model;
 
 class post extends Model
 {
@@ -599,7 +599,7 @@ To define a mutator, define a `setFooAttribute` method on your model where `Foo`
 
 namespace App;
 
-use Basemkhirat\Elasticsearch\Model;
+use Abkrim\Elasticsearch\Model;
 
 class post extends Model
 {
@@ -641,7 +641,7 @@ For example, let's cast the `is_published` attribute, which is stored in our ind
 
 namespace App;
 
-use Basemkhirat\Elasticsearch\Model;
+use Abkrim\Elasticsearch\Model;
 
 class Post extends Model
 {
@@ -676,17 +676,17 @@ if ($post->is_published) {
 
 ```php
 ES::create("my_index");
-    
-# or 
-    
+
+# or
+
 ES::index("my_index")->create();
 ```
-    
+
 ##### Creating index with custom options (optional)
-   
+
 ```php
 ES::index("my_index")->create(function($index){
-        
+
     $index->shards(5)->replicas(1)->mapping([
         'my_type' => [
             'properties' => [
@@ -699,13 +699,13 @@ ES::index("my_index")->create(function($index){
             ]
         ]
     ])
-    
+
 });
-    
+
 # or
-    
+
 ES::create("my_index", function($index){
-  
+
       $index->shards(5)->replicas(1)->mapping([
           'my_type' => [
               'properties' => [
@@ -718,7 +718,7 @@ ES::create("my_index", function($index){
               ]
           ]
       ])
-  
+
 });
 
 ```
@@ -726,9 +726,9 @@ ES::create("my_index", function($index){
 
 ```php
 ES::drop("my_index");
-    
+
 # or
-    
+
 ES::index("my_index")->drop();
 ```
 #### Running queries
@@ -744,24 +744,24 @@ You can rewrite the above query to
 $documents = ES::type("my_type")->get();    # return a collection of results
 ```
 
-The query builder will use the default connection, index name in configuration file `es.php`. 
- 
+The query builder will use the default connection, index name in configuration file `es.php`.
+
 Connection and index names in query overrides connection and index names in configuration file `es.php`.
 
 ##### Getting document by id
 ```php
 ES::type("my_type")->id(3)->first();
-    
+
 # or
-    
+
 ES::type("my_type")->_id(3)->first();
 ```
 ##### Sorting
-```php 
+```php
 ES::type("my_type")->orderBy("created_at", "desc")->get();
-    
+
 # Sorting with text search score
-    
+
 ES::type("my_type")->orderBy("_score")->get();
 ```
 ##### Limit and offset
@@ -769,11 +769,11 @@ ES::type("my_type")->orderBy("_score")->get();
 ES::type("my_type")->take(10)->skip(5)->get();
 ```
 ##### Select only specific fields
-```php    
+```php
 ES::type("my_type")->select("title", "content")->take(10)->skip(5)->get();
 ```
 ##### Where clause
-```php    
+```php
 ES::type("my_type")->where("status", "published")->get();
 
 # or
@@ -802,27 +802,27 @@ ES::type("my_type")->where("title", "like", "foo")->get();
 ```
 ##### Where field exists
 ```php
-ES::type("my_type")->where("hobbies", "exists", true)->get(); 
+ES::type("my_type")->where("hobbies", "exists", true)->get();
 
-# or 
+# or
 
 ES::type("my_type")->whereExists("hobbies", true)->get();
-```    
+```
 ##### Where in clause
-```php    
+```php
 ES::type("my_type")->whereIn("id", [100, 150])->get();
 ```
-##### Where between clause 
-```php    
+##### Where between clause
+```php
 ES::type("my_type")->whereBetween("id", 100, 150)->get();
 
-# or 
+# or
 
 ES::type("my_type")->whereBetween("id", [100, 150])->get();
-```    
+```
 ##### Where not clause
-```php    
-ES::type("my_type")->whereNot("status", "published")->get(); 
+```php
+ES::type("my_type")->whereNot("status", "published")->get();
 
 # or
 
@@ -850,27 +850,27 @@ ES::type("my_type")->whereNot("title", "like", "foo")->get();
 ```
 ##### Where not field exists
 ```php
-ES::type("my_type")->whereNot("hobbies", "exists", true)->get(); 
+ES::type("my_type")->whereNot("hobbies", "exists", true)->get();
 
 # or
 
 ES::type("my_type")->whereExists("hobbies", true)->get();
-```    
+```
 ##### Where not in clause
-```php    
+```php
 ES::type("my_type")->whereNotIn("id", [100, 150])->get();
 ```
-##### Where not between clause 
-```php    
+##### Where not between clause
+```php
 ES::type("my_type")->whereNotBetween("id", 100, 150)->get();
 
 # or
 
 ES::type("my_type")->whereNotBetween("id", [100, 150])->get();
 ```
-   
-##### Search by a distance from a geo point 
-```php  
+
+##### Search by a distance from a geo point
+```php
 ES::type("my_type")->distance("location", ["lat" => -33.8688197, "lon" => 151.20929550000005], "10km")->get();
 
 # or
@@ -879,12 +879,12 @@ ES::type("my_type")->distance("location", "-33.8688197,151.20929550000005", "10k
 
 # or
 
-ES::type("my_type")->distance("location", [151.20929550000005, -33.8688197], "10km")->get();  
+ES::type("my_type")->distance("location", [151.20929550000005, -33.8688197], "10km")->get();
 ```
-  
-  
+
+
 ##### Search using array queries
-      
+
 ```php
 ES::type("my_type")->body([
     "query" => [
@@ -903,7 +903,7 @@ ES::type("my_type")->body([
 ES::type("my_type")->body([
 
 	"_source" => ["content"]
-	
+
 	"query" => [
 	     "bool" => [
 	         "must" => [
@@ -911,11 +911,11 @@ ES::type("my_type")->body([
 	         ]
 	     ]
 	],
-	   
+
 	"sort" => [
 		"_score"
 	]
-     
+
 ])->select("name")->orderBy("created_at", "desc")->take(10)->skip(5)->get();
 
 # The result query will be
@@ -968,14 +968,14 @@ Array
 */
 
 ```
-  
+
 ##### Search the entire document
-    
+
 ```php
 ES::type("my_type")->search("hello")->get();
-    
+
 # search with Boost = 2
-    
+
 ES::type("my_type")->search("hello", 2)->get();
 
 # search within specific fields with different weights
@@ -987,25 +987,25 @@ ES::type("my_type")->search("hello", function($search){
 
 ##### Return only first record
 
-```php    
+```php
 ES::type("my_type")->search("hello")->first();
 ```
-  
+
 ##### Return only count
-```php    
+```php
 ES::type("my_type")->search("hello")->count();
 ```
-    
+
 ##### Scan-and-Scroll queries
-    
+
 
 
 ```php
-# These queries are suitable for large amount of data. 
+# These queries are suitable for large amount of data.
 # A scrolled search allows you to do an initial search and to keep pulling batches of results
 # from Elasticsearch until there are no more results left.
 # It’s a bit like a cursor in a traditional database
-    
+
 $documents = ES::type("my_type")->search("hello")
                  ->scroll("2m")
                  ->take(1000)
@@ -1020,20 +1020,20 @@ $documents = ES::type("my_type")->search("hello")
 
 # And so on ...
 # Note that you don't need to write the query parameters in every scroll. All you need the `scroll_id` and query scroll time.
-    
-# To clear `scroll_id` 
-  
+
+# To clear `scroll_id`
+
 ES::type("my_type")->scrollID("DnF1ZXJ5VGhlbkZldGNoBQAAAAAAAAFMFlJQOEtTdnJIUklhcU1FX2VqS0EwZncAAAAAAAABSxZSUDhLU3ZySFJJYXFNRV9laktBMGZ3AAAAAAAAAU4WUlA4S1N2ckhSSWFxTUVfZWpLQTBmdwAAAAAAAAFPFlJQOEtTdnJIUklhcU1FX2VqS0EwZncAAAAAAAABTRZSUDhLU3ZySFJJYXFNRV9laktBMGZ3")
         ->clear();
 ```
-    
+
 ##### Paginate results with 5 records per page
 
-```php   
+```php
 $documents = ES::type("my_type")->search("hello")->paginate(5);
-    
+
 # Getting pagination links
-    
+
 $documents->links();
 
 # Bootstrap 4 pagination
@@ -1079,7 +1079,7 @@ ES::type("my_type")->search("hello")->where("views", ">", 150)->response();
 
 ##### Ignoring bad HTTP response
 
-```php      
+```php
 ES::type("my_type")->ignore(404, 500)->id(5)->first();
 ```
 
@@ -1089,17 +1089,17 @@ Package comes with a built-in caching layer based on laravel cache.
 
 ```php
 ES::type("my_type")->search("hello")->remember(10)->get();
-	
+
 # Specify a custom cache key
 
 ES::type("my_type")->search("hello")->remember(10, "last_documents")->get();
-	
+
 # Caching using other available driver
-	
+
 ES::type("my_type")->search("hello")->cacheDriver("redis")->remember(10, "last_documents")->get();
-	
+
 # Caching with cache key prefix
-	
+
 ES::type("my_type")->search("hello")->cacheDriver("redis")->cachePrefix("docs")->remember(10, "last_documents")->get();
 ```
 
@@ -1121,23 +1121,23 @@ ES::raw()->search([
     ]
 ]);
 ```
-   
+
 ##### Insert a new document
-    
+
 ```php
 ES::type("my_type")->id(3)->insert([
     "title" => "Test document",
     "content" => "Sample content"
 ]);
-     
+
 # A new document will be inserted with _id = 3.
-  
+
 # [id is optional] if not specified, a unique hash key will be generated.
 ```
   >
-    
+
 ##### Bulk insert a multiple of documents at once.
-     
+
 ```php
 # Main query
 
@@ -1148,12 +1148,12 @@ ES::index("my_index")->type("my_type")->bulk(function ($bulk){
 	$bulk->index("my_index_1")->type("my_type_1")->id(10)->insert(["title" => "Test document 1","content" => "Sample content 1"]);
 	$bulk->index("my_index_2")->id(11)->insert(["title" => "Test document 2","content" => "Sample content 2"]);
 	$bulk->id(12)->insert(["title" => "Test document 3", "content" => "Sample content 3"]);
-	
+
 });
 
 # Notes from the above query:
 
-# As index and type names are required for insertion, Index and type names are extendable. This means that: 
+# As index and type names are required for insertion, Index and type names are extendable. This means that:
 
 # If index() is not specified in subquery:
 # -- The builder will get index name from the main query.
@@ -1165,33 +1165,33 @@ ES::index("my_index")->type("my_type")->bulk(function ($bulk){
 # -- The builder will get type name from the main query.
 
 # you can use old bulk code style using multidimensional array of [id => data] pairs
- 
+
 ES::type("my_type")->bulk([
- 
+
 	10 => [
 		"title" => "Test document 1",
 		"content" => "Sample content 1"
 	],
-	 
+
 	11 => [
 		"title" => "Test document 2",
 		"content" => "Sample content 2"
 	]
- 
+
 ]);
- 
+
 # The two given documents will be inserted with its associated ids
 ```
 
 ##### Update an existing document
-```php     
+```php
 ES::type("my_type")->id(3)->update([
    "title" => "Test document",
    "content" => "sample content"
 ]);
-    
+
 # Document has _id = 3 will be updated.
-    
+
 # [id is required]
 ```
 
@@ -1203,64 +1203,64 @@ ES::type("my_type")->bulk(function ($bulk){
     $bulk->id(11)->update(["title" => "Test document 2","content" => "Sample content 2"]);
 });
 ```
-   
+
 ##### Incrementing field
 ```php
 ES::type("my_type")->id(3)->increment("views");
-    
+
 # Document has _id = 3 will be incremented by 1.
-    
+
 ES::type("my_type")->id(3)->increment("views", 3);
-    
+
 # Document has _id = 3 will be incremented by 3.
 
 # [id is required]
 ```
-   
+
 ##### Decrementing field
-```php 
+```php
 ES::type("my_type")->id(3)->decrement("views");
-    
+
 # Document has _id = 3 will be decremented by 1.
-    
+
 ES::type("my_type")->id(3)->decrement("views", 3);
-    
+
 # Document has _id = 3 will be decremented by 3.
 
 # [id is required]
 ```
-   
+
 ##### Update using script
-       
+
 ```php
 # increment field by script
-    
+
 ES::type("my_type")->id(3)->script(
     "ctx._source.$field += params.count",
     ["count" => 1]
 );
-    
+
 # add php tag to tags array list
-    
+
 ES::type("my_type")->id(3)->script(
     "ctx._source.tags.add(params.tag)",
     ["tag" => "php"]
 );
-    
+
 # delete the doc if the tags field contain mongodb, otherwise it does nothing (noop)
-    
+
 ES::type("my_type")->id(3)->script(
     "if (ctx._source.tags.contains(params.tag)) { ctx.op = 'delete' } else { ctx.op = 'none' }",
     ["tag" => "mongodb"]
 );
 ```
-   
+
 ##### Delete a document
 ```php
 ES::type("my_type")->id(3)->delete();
-    
+
 # Document has _id = 3 will be deleted.
-    
+
 # [id is required]
 ```
 
@@ -1275,18 +1275,18 @@ ES::type("my_type")->bulk(function ($bulk){
 
 ## Releases
 
-  See [Change Log](https://github.com/basemkhirat/elasticsearch/blob/master/CHANGELOG.md).
+  See [Change Log](https://github.com/abkrim/elasticsearch/blob/master/CHANGELOG.md).
 
 ## Author
-[Basem Khirat](http://basemkhirat.com) - [basemkhirat@gmail.com](mailto:basemkhirat@gmail.com) - [@basemkhirat](https://twitter.com/basemkhirat)  
+[Basem Khirat](http://abkrim.com) - [abkrim@gmail.com](mailto:abkrim@gmail.com) - [@abkrim](https://twitter.com/abkrim)
 
 
 ## Bugs, Suggestions and Contributions
 
-Thanks to [everyone](https://github.com/basemkhirat/elasticsearch/graphs/contributors)
+Thanks to [everyone](https://github.com/abkrim/elasticsearch/graphs/contributors)
 who has contributed to this project!
 
-Please use [Github](https://github.com/basemkhirat/elasticsearch) for reporting bugs, 
+Please use [Github](https://github.com/abkrim/elasticsearch) for reporting bugs,
 and making comments or suggestions.
 
 ## License

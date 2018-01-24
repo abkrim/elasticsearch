@@ -1,10 +1,10 @@
 <?php
 
-namespace Basemkhirat\Elasticsearch;
+namespace Abkrim\Elasticsearch;
 
 /**
  * Class Index
- * @package Basemkhirat\Elasticsearch\Query
+ * @package Abkrim\Elasticsearch\Query
  */
 class Index
 {
@@ -193,5 +193,3 @@ class Index
         return $this;
     }
 }
-
-

@@ -1,6 +1,6 @@
 <?php
 
-namespace Basemkhirat\Elasticsearch;
+namespace Abkrim\Elasticsearch;
 
 use Elasticsearch\Client;
 use Elasticsearch\ClientBuilder;
@@ -8,7 +8,7 @@ use Symfony\Component\HttpKernel\Exception\HttpException as HttpException;
 
 /**
  * Class Connection
- * @package Basemkhirat\Elasticsearch
+ * @package Abkrim\Elasticsearch
  */
 class Connection
 {

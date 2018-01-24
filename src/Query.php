@@ -1,16 +1,16 @@
 <?php
 
-namespace Basemkhirat\Elasticsearch;
+namespace Abkrim\Elasticsearch;
 
-use Basemkhirat\Elasticsearch\Classes\Bulk;
-use Basemkhirat\Elasticsearch\Classes\Search;
+use Abkrim\Elasticsearch\Classes\Bulk;
+use Abkrim\Elasticsearch\Classes\Search;
 use Elasticsearch\Client;
 use Elasticsearch\Common\Exceptions\BadMethodCallException;
 
 
 /**
  * Class Query
- * @package Basemkhirat\Elasticsearch\Query
+ * @package Abkrim\Elasticsearch\Query
  */
 class Query
 {

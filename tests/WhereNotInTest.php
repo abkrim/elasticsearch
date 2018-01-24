@@ -1,8 +1,8 @@
 <?php
 
-namespace Basemkhirat\Elasticsearch\Tests;
+namespace Abkrim\Elasticsearch\Tests;
 
-use Basemkhirat\Elasticsearch\Tests\Traits\ESQueryTrait;
+use Abkrim\Elasticsearch\Tests\Traits\ESQueryTrait;
 
 class WhereNotInTest extends \PHPUnit_Framework_TestCase
 {

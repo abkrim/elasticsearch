@@ -1,13 +1,13 @@
 <?php
 
-namespace Basemkhirat\Elasticsearch;
+namespace Abkrim\Elasticsearch;
 
 use ArrayAccess;
 
 /**
  * Elasticsearch data model
  * Class Model
- * @package Basemkhirat\Elasticsearch
+ * @package Abkrim\Elasticsearch
  */
 class Model implements ArrayAccess
 {
